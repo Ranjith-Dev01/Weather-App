@@ -6,6 +6,8 @@ const forecast = require("./utils/forcast");
 
 const app = express();
 
+const port = process.env.PORT || 4000;
+
 //Define paths for express config
 const staticPath = path.join(__dirname, "../public");
 const viewsPath = path.join(__dirname, "../templates/views");
@@ -104,6 +106,6 @@ app.get("*", (req, res) => {
   });
 });
 
-app.listen(4000, () => {
-  console.log("server is up and running");
+app.listen(port, () => {
+  console.log("server is up and running on" + port);
 });
